@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  mqtt-metrics:
+    image: golang:1.18.1-alpine
+    build: ./
+    command: ./mqtt-metrics
+    restart: always
+    container_name: mqtt-metrics
+    ports:
+      - "9701:9701"
+    volumes:
+      - ./config:/config
+    environment:
+      MQTT_METRICS_CONFIG: "/config/mqtt-metrics.json"

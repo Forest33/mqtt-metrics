@@ -1,0 +1,55 @@
+{
+  "broker": {
+    "host": "192.168.0.3",
+    "port": 1883,
+    "client_id": "mqtt-metrics",
+    "user_name": "forest",
+    "password": "redcat09080706"
+  },
+  "logger": {
+    "level": "debug",
+    "time_field_format": "2006-01-02T15:04:05Z07:00",
+    "pretty_print": true,
+    "disable_sampling": false,
+    "redirect_std_logger": false,
+    "error_stack": true,
+    "show_caller": false
+  },
+  "prometheus": {
+    "port": 9701,
+    "path": "/metrics",
+    "namespace": "home"
+  },
+  "metrics": [
+    {
+      "name": "balcony_south_temperature",
+      "type": "gauge",
+      "description": "Температура",
+      "topic": "balcony_south/temperature"
+    },
+    {
+      "name": "balcony_south_humidity",
+      "type": "gauge",
+      "description": "Влажность",
+      "topic": "balcony_south/humidity"
+    },
+    {
+      "name": "balcony_south_light",
+      "type": "gauge",
+      "description": "Уровень освещенности",
+      "topic": "balcony_south/light"
+    },
+    {
+      "name": "balcony_south_light_switch_status",
+      "type": "gauge",
+      "description": "Статус освещения #1",
+      "topic": "balcony_south/light_switch_status"
+    },
+    {
+      "name": "balcony_south_light2_switch_status",
+      "type": "gauge",
+      "description": "Статус освещения #2",
+      "topic": "balcony_south/light2_switch_status"
+    }
+  ]
+}
